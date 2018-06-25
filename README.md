@@ -1,22 +1,23 @@
-# Create React App example
+# Material React using React Router
 
-## How to use
+## For more Information on Material-UI Components
+Check them out at: https://material-ui.com/
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
 
-```bash
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/create-react-app
-cd create-react-app
+## For more Information on React Router
+https://reacttraining.com/react-router/core/guides/philosophy
+
+
+### How to Use this Project?
+
 ```
-
-Install it and run:
-
-```bash
+git clone https://github.com/ahmed-abdellatif/material-ui-react-router.git
+cd material-ui-react-router
 npm install
-npm run start
+npm install react-router-dom
+npm start
 ```
 
-## The idea behind the example
-
-[Create React App](https://github.com/facebookincubator/create-react-app) with no build configuration.
-# Material-UI-React-Router
+### Purpose
+The purpose of this small project is to create a basic
+app with a routing structure using the material-ui react components

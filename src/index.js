@@ -17,7 +17,6 @@ import {
 
 ReactDOM.render(
   <Router>
-
     <div>
     <Home />
       <Route path="/editor" component={Editor}/>
