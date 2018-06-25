@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './pages/Home/home';
-import About from './pages/About/about';
+import Editor from './pages/Editor/editor';
 import Topics from './pages/Topics/topics';
 import Register from './pages/Register/register';
 import Login from './pages/Login/login';
@@ -20,7 +20,7 @@ ReactDOM.render(
 
     <div>
     <Home />
-      <Route path="/about" component={About}/>
+      <Route path="/editor" component={Editor}/>
       <Route path="/topics" component={Topics}/>
       <Route path="/register" component={Register}/>
       <Route path="/login" component={Login}/>

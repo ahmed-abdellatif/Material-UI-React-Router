@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../../withRoot';
-
-//
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -15,9 +13,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-//import About from '../About/about.js';
 import Button from '@material-ui/core/Button';
-//import Topics from '../Topics/topics.js'
 
 //
 import {
@@ -25,9 +21,12 @@ import {
   //Route,
   Link
 } from 'react-router-dom'
-const styles = {
+const styles = theme => ({
   root: {
     flexGrow: 1,
+  },
+  button: {
+    margin: theme.spacing.unit,
   },
   flex: {
     flex: 1,
@@ -36,14 +35,15 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
-};
+ });
 
 
-const MyLink = props => <Link to="/" {...props} />
-const MyLink1 = props => <Link to="/about" {...props} />
-const MyLink2 = props => <Link to="/topics" {...props} />
-const MyLink3 = props => <Link to="/login" {...props} />
-const MyLink4 = props => <Link to="/register" {...props} />
+
+const HomeLink = props => <Link to="/" {...props} />
+const EditorLink = props => <Link to="/editor" {...props} />
+const TopicsLink = props => <Link to="/topics" {...props} />
+const LoginLink = props => <Link to="/login" {...props} />
+const RegisterLinks = props => <Link to="/register" {...props} />
 
 
 
@@ -94,20 +94,26 @@ class Home extends React.Component {
            </IconButton>
 
            <Typography variant="title" color="inherit" className={classes.flex}>
-             Material React
+             Material React Coding Space
            </Typography>
+
            {auth && (
              <div>
-             <Button component={MyLink}>
+
+             {/* Home Link */}
+             <Button component={HomeLink} variant="outlined" className={classes.button}>
                Home
              </Button>
 
-             <Button component={MyLink1}>
-              About
-            </Button>
-            <Button component={MyLink2}>
+            {/* Editor Link */}
+             <Button component={EditorLink} variant="outlined" className={classes.button}>
+              Code Editor
+             </Button>
+
+           {/* Topics Link */}
+            <Button component={TopicsLink} variant="outlined" className={classes.button}>
              Topics
-           </Button>
+            </Button>
 
                <IconButton
                  aria-owns={open ? 'menu-appbar' : null}
@@ -117,6 +123,7 @@ class Home extends React.Component {
                >
                  <AccountCircle />
                </IconButton>
+
                <Menu
                  id="menu-appbar"
                  anchorEl={anchorEl}
@@ -132,21 +139,20 @@ class Home extends React.Component {
                  onClose={this.handleClose}
                >
 
+               {/* Login Link */}
                 <MenuItem
                 onClick={this.handleClose}
-                component={MyLink3}
+                component={LoginLink}
                 >
                 Login
                </MenuItem>
 
+              {/* Register Link */}
                <MenuItem
                   onClick={this.handleClose}
-                  component={MyLink4}
+                  component={RegisterLinks}
                 >Register</MenuItem>
 
-
-                 <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                 <MenuItem onClick={this.handleClose}>My account</MenuItem>
                </Menu>
              </div>
            )}

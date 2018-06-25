@@ -3,72 +3,80 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
-import FaceIcon from '@material-ui/icons/Face';
-import DoneIcon from '@material-ui/icons/Done';
+import Paper from '@material-ui/core/Paper';
+import TagFacesIcon from '@material-ui/icons/TagFaces';
+import Typography from '@material-ui/core/Typography';
+
 
 const styles = theme => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
+    padding: theme.spacing.unit / 2,
   },
   chip: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing.unit / 2,
   },
 });
 
-function handleDelete() {
-  alert('You clicked the delete icon.'); // eslint-disable-line no-alert
-}
+class Topics extends React.Component {
+  state = {
+    chipData: [
+      { key: 0, label: 'Angular' },
+      { key: 1, label: 'jQuery' },
+      { key: 2, label: 'Polymer' },
+      { key: 3, label: 'React' },
+      { key: 4, label: 'Vue.js' },
+    ],
+  };
 
-function handleClick() {
-  alert('You clicked the Chip.'); // eslint-disable-line no-alert
-}
+  handleDelete = data => () => {
+    if (data.label === 'React') {
+      alert('Why would you want to delete React?! :)'); // eslint-disable-line no-alert
+      return;
+    }
 
-function Topics(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <Chip label="Basic Chip" className={classes.chip} />
-      <Chip
-        avatar={<Avatar>MB</Avatar>}
-        label="Clickable Chip"
-        onClick={handleClick}
-        className={classes.chip}
-      />
-      <Chip
-        avatar={<Avatar src="/static/images/uxceo-128.jpg" />}
-        label="Deletable Chip"
-        onDelete={handleDelete}
-        className={classes.chip}
-      />
-      <Chip
-        avatar={
-          <Avatar>
-            <FaceIcon />
-          </Avatar>
-        }
-        label="Clickable Deletable Chip"
-        onClick={handleClick}
-        onDelete={handleDelete}
-        className={classes.chip}
-      />
-      <Chip
-        label="Custom delete icon Chip"
-        onClick={handleClick}
-        onDelete={handleDelete}
-        className={classes.chip}
-        deleteIcon={<DoneIcon />}
-      />
-      <Chip
-        label="Clickable Link Chip"
-        className={classes.chip}
-        component="a"
-        href="#chip"
-        clickable
-      />
-    </div>
-  );
+    const chipData = [...this.state.chipData];
+    const chipToDelete = chipData.indexOf(data);
+    chipData.splice(chipToDelete, 1);
+    this.setState({ chipData });
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+
+      <Paper className={classes.root} elevation={5} style={{paddingTop:60, paddingBottom:60, textAlign:'center'}}  >
+      <Typography variant="headline" component="h2">
+        Some Awesome Programming Topics
+      </Typography>
+
+      {this.state.chipData.map(data => {
+          let avatar = null;
+
+          if (data.label === 'React') {
+            avatar = (
+              <Avatar>
+                <TagFacesIcon className={classes.svgIcon} />
+              </Avatar>
+            );
+          }
+
+          return (
+            <Chip
+              key={data.key}
+              avatar={avatar}
+              label={data.label}
+              onDelete={this.handleDelete(data)}
+              className={classes.chip}
+            />
+          );
+        })}
+      </Paper>
+    );
+  }
 }
 
 Topics.propTypes = {
