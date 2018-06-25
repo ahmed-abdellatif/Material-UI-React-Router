@@ -33,7 +33,7 @@ class Topics extends React.Component {
 
   handleDelete = data => () => {
     if (data.label === 'React') {
-      alert('Why would you want to delete React?! :)'); // eslint-disable-line no-alert
+      alert('Why would you want to delete React?! :( -> :)'); // eslint-disable-line no-alert
       return;
     }
 
