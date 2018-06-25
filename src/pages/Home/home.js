@@ -15,14 +15,14 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import About from '../About/about.js';
+//import About from '../About/about.js';
 import Button from '@material-ui/core/Button';
-import Topics from '../Topics/topics.js'
+//import Topics from '../Topics/topics.js'
 
 //
 import {
-  BrowserRouter as Router,
-  Route,
+  //BrowserRouter,
+  //Route,
   Link
 } from 'react-router-dom'
 const styles = {
@@ -42,6 +42,10 @@ const styles = {
 const MyLink = props => <Link to="/" {...props} />
 const MyLink1 = props => <Link to="/about" {...props} />
 const MyLink2 = props => <Link to="/topics" {...props} />
+const MyLink3 = props => <Link to="/login" {...props} />
+const MyLink4 = props => <Link to="/register" {...props} />
+
+
 
 
 class Home extends React.Component {
@@ -80,13 +84,17 @@ class Home extends React.Component {
          />
        </FormGroup>
        <AppBar position="static">
+
          <Toolbar>
+
+
+
            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
              <MenuIcon />
            </IconButton>
 
            <Typography variant="title" color="inherit" className={classes.flex}>
-             Home
+             Material React
            </Typography>
            {auth && (
              <div>
@@ -123,6 +131,20 @@ class Home extends React.Component {
                  open={open}
                  onClose={this.handleClose}
                >
+
+                <MenuItem
+                onClick={this.handleClose}
+                component={MyLink3}
+                >
+                Login
+               </MenuItem>
+
+               <MenuItem
+                  onClick={this.handleClose}
+                  component={MyLink4}
+                >Register</MenuItem>
+
+
                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
                </Menu>

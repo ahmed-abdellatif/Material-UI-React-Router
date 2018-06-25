@@ -16,6 +16,7 @@ import withRoot from '../withRoot';
 import Home from './Home/home.js';
 import About from './About/about.js';
 import Topics from './Topics/topics.js';
+import Topics from './Register/register.js';
 
 
 
@@ -52,6 +53,8 @@ function Index(props) {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/topics">Topics</Link></li>
+                <li><Link to="/register">Register</Link></li>
+
               </ul>
 
               <hr/>
@@ -59,6 +62,8 @@ function Index(props) {
               <Route exact path="/" component={Home}/>
               <Route path="/about" component={About}/>
               <Route path="/topics" component={Topics}/>
+              <Route path="/register" component={Register}/>
+
             </div>
           </Router>
       </AppBar>
