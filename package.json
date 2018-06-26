@@ -1,18 +1,22 @@
 {
   "name": "material-ui-react-router",
   "version": "1.0.0",
-  "homepage": "http://myname.github.io/myapp",
+  "homepage": "https://ahmed-abdellatif.github.io/material-ui-react-router/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.2.3",
     "@material-ui/icons": "^1.1.0",
+    "ajv": "^6.5.1",
+    "firebase": "^5.1.0",
     "gh-pages": "^1.2.0",
     "prop-types": "latest",
     "react": "latest",
     "react-ace": "^6.1.1",
     "react-dom": "latest",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "react-select": "^1.2.1",
+    "yarn": "^1.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

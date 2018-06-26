@@ -1,7 +1,8 @@
-# :octocat: React Material UI using React Router
-### :globe_with_meridians: https://ahmed-abdellatif.github.io/material-ui-react-router/
+# :octocat: Material React using React Router
+:globe_with_meridians: https://ahmed-abdellatif.github.io/material-ui-react-router/
 
-## For more Information on React JS Material-UI Components
+
+## For more Information on Material-UI Components
 Check them out at: https://material-ui.com/
 
 
@@ -19,7 +20,7 @@ npm install react-router-dom
 npm start
 ```
 
-## Getting Started with Redux
+# Getting Started with Redux
 
 reference: https://redux.js.org
 
@@ -45,6 +46,40 @@ npm install --save react-redux
 ```
 npm install --save-dev redux-devtools
 ```
+
+# React Select https://github.com/JedWatson/react-select
+
+
+### You will need Yarn
+
+##### macOS Installation
+
+```
+brew install yarn
+```
+
+```
+brew install yarn --without-node
+
+```
+
+```
+npm i yarn
+```
+
+### Install New Version
+```
+yarn add react-select@next
+```
+
+### Install Stable Version
+```
+yarn add react-select
+```
+
+
+
+
 
 
 ### Purpose
