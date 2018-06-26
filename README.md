@@ -1,5 +1,4 @@
 # Material React using React Router
-Viewable here => https://ahmed-abdellatif.github.io/material-ui-react-router/
 
 ## For more Information on Material-UI Components
 Check them out at: https://material-ui.com/
@@ -19,8 +18,34 @@ npm install react-router-dom
 npm start
 ```
 
+## Getting Started with Redux
+
+reference: https://redux.js.org
+
+Definition: Redux is a framework which is used to manage the 'state' of JS Applications.
+
+- Actions: Payloads of information that send data from your application to your store
+- Reducers: Specifies how the application's state changes in response to actions sent to the store.
+- Store: Holds application state together
+
+### Installing Redux
+
+```
+npm install --save redux
+```
+
+#### React Bindings
+```
+npm install --save react-redux
+```
+
+#### React-Redux Dev Tools
+
+```
+npm install --save-dev redux-devtools
+```
+
+
 ### Purpose
 The purpose of this small project is to create a basic
 app with a routing structure using the material-ui react components
-
-### In Progress 06/25/2018
