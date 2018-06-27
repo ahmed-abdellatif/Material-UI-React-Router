@@ -38,6 +38,12 @@ const styles = theme => ({
   flex: {
     flex: 1,
   },
+  text: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   button: {
      margin: theme.spacing.unit,
      textAlign: 'center',
@@ -159,12 +165,11 @@ const drawer = (
                 {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
               </IconButton>
               <Typography variant="title" color="inherit" className={classes.flex} noWrap>
-                Codex <Share className={classes.rightIcon} style={{position: 'relative', verticalAlign:'middle', top:-2, left:-9}}   />
+                Codex
               </Typography>
             </div>
             <Divider />
-            <div>
-
+            <div className={classes.button}>
 
             {/* Home Link */}
             <IconButton component={HomeLink} variant="contained" color="primary" className={classes.button} aria-label="Home">
@@ -218,19 +223,16 @@ const drawer = (
               </IconButton>
 
 
-            {/*  <Typography variant="title" color="inherit" noWrap>
-                Persistent drawer
-              </Typography>*/}
 
               {/* AppBar Title */}
                 <Typography variant="title" color="inherit" className={classes.flex} noWrap>
-                  Codex <Share className={classes.rightIcon} style={{position: 'relative', verticalAlign:'middle', top:-2, left:-9}}   />
+                  Codex
                 </Typography>
 
             {/* AppBar Nav Icons Begin */}
 
 
-                  <div class="nav-container">
+                  <div>
                   {/* Home Link */}
                   <IconButton component={HomeLink} variant="contained" color="secondary" className={classes.button} aria-label="Home">
                     <HomeIcon />
