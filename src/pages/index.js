@@ -27,15 +27,6 @@ const styles = theme => ({
   root: {
       flex: '1 0 100%',
   },
-  hero: {
-    minHeight: '80vh',
-    flex: '0 0 auto',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.palette.background.paper,
-    color: theme.palette.type === 'light' ? theme.palette.primary.dark : theme.palette.primary.main,
-  },
   appFrame: {
     height: '100%',
     zIndex: 1,
@@ -80,11 +71,11 @@ const styles = theme => ({
     display: 'none',
   },
   drawerPaper: {
-    position: 'relative',
+    position: 'absolute',
     width: drawerWidth,
     flex: '1 0 auto',
     overflow: 'hidden',
-     padding: theme.spacing.unit * 2,
+    padding: theme.spacing.unit * 2,
   },
   drawerHeader: {
     display: 'flex',
