@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
+import Hidden from '@material-ui/core/Hidden';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import classNames from 'classnames';
@@ -24,7 +25,16 @@ const drawerWidth = 300;
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
+      flex: '1 0 100%',
+  },
+  hero: {
+    minHeight: '80vh',
+    flex: '0 0 auto',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.type === 'light' ? theme.palette.primary.dark : theme.palette.primary.main,
   },
   appFrame: {
     height: '100%',
@@ -72,6 +82,9 @@ const styles = theme => ({
   drawerPaper: {
     position: 'relative',
     width: drawerWidth,
+    flex: '1 0 auto',
+    overflow: 'hidden',
+     padding: theme.spacing.unit * 2,
   },
   drawerHeader: {
     display: 'flex',
@@ -134,15 +147,13 @@ class Index extends React.Component {
     });
   };
 
-
-
   render() {
     const { classes, theme } = this.props;
     const { anchor, open } = this.state;
 
 const drawer = (
     <Drawer
-            variant="persistent"
+            variant="responsive"
             anchor={anchor}
             open={open}
             classes={{
@@ -175,6 +186,7 @@ const drawer = (
           </IconButton>
           </List>
     </Drawer>
+
         );
 
         let before = null;

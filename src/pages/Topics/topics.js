@@ -24,6 +24,15 @@ const suggestions = [
   label: suggestion.label,
 }));
 
+const help = [
+  { label: 'Rendering Elements' },
+  { label: 'Inheritance' },
+  { label: 'Components' },
+].map(help => ({
+  value: help.label,
+  label: help.label,
+}));
+
 class Topics extends React.Component {
   handleClick = event => {
     this.props.onSelect(this.props.topics, event);
@@ -242,29 +251,7 @@ class IntegrationReactSelect extends React.Component {
             instanceId: 'react-select-chip',
             id: 'react-select-chip',
             simpleValue: true,
-            options: suggestions,
-          }}
-        />
-        <TextField
-          fullWidth
-          value={this.state.multiLabel}
-          onChange={this.handleChange('multiLabel')}
-          placeholder="Select multiple countries"
-          name="react-select-chip-label"
-          label="With label"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          InputProps={{
-            inputComponent: SelectWrapped,
-            inputProps: {
-              classes,
-              multi: true,
-              instanceId: 'react-select-chip-label',
-              id: 'react-select-chip-label',
-              simpleValue: true,
-              options: suggestions,
-            },
+            options: help,
           }}
         />
       </div>
