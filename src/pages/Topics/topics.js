@@ -14,9 +14,18 @@ import 'typeface-roboto'
 
 import Typography from '@material-ui/core/Typography';
 
-  const styles = theme => ({
-    root: {
+const styles = theme => ({
+  root: {
       flex: '1 0 100%',
+    },
+    hero: {
+      minHeight: '80vh',
+      flex: '0 0 auto',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: theme.palette.background.paper,
+      color: theme.palette.type === 'light' ? theme.palette.primary.dark : theme.palette.primary.main,
     },
     text: {
       display: 'flex',
@@ -24,21 +33,12 @@ import Typography from '@material-ui/core/Typography';
       alignItems: 'center',
       justifyContent: 'center',
     },
-    hero: {
-    minHeight: '80vh',
-    flex: '0 0 auto',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.palette.background.paper,
-    color: theme.palette.type === 'light' ? theme.palette.primary.dark : theme.palette.primary.main,
-  },
     title: {
-      letterSpacing: '.5rem',
-      textIndent: '.5rem',
+      letterSpacing: '.7rem',
+      textIndent: '.7rem',
       fontWeight: theme.typography.fontWeightLight,
       [theme.breakpoints.only('xs')]: {
-        fontSize: 35,
+        fontSize: 28,
       },
       whiteSpace: 'nowrap',
     },
@@ -47,7 +47,6 @@ import Typography from '@material-ui/core/Typography';
       paddingRight: theme.spacing.unit * 4,
       marginTop: theme.spacing.unit,
       maxWidth: 500,
-      display: 'inline-flex',
       textAlign: 'center',
     },
     content: {
@@ -58,11 +57,8 @@ import Typography from '@material-ui/core/Typography';
       },
     },
     button: {
-       margin: theme.spacing.unit,
-       textAlign: 'center',
-       position: 'relative',
-
-      },
+      marginTop: theme.spacing.unit * 3,
+    },
     logo: {
       margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
       width: '100%',
@@ -79,25 +75,31 @@ import Typography from '@material-ui/core/Typography';
     stepIcon: {
       marginBottom: theme.spacing.unit,
     },
-    icon: {
-      fontSize: 70,
-    },
-  });
+    markdownElement: {},
+  icon: {
+    fontSize: 70,
+  },
+});
+
+
 const TopicsLink = props => <Link to="/topics" {...props} />
 
 
-function PaperSheet(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
+class Topics extends React.Component {
+
+  render() {
+    const classes = this.props.classes;
+    return (
+        <div className={classes.root}>
+
 
       <div className={classes.hero}>
         <div className={classes.content}>
           <div className={classes.text}>
             <Typography
-              variant="display3"
+              variant="display2"
               align="center"
-              component="h1"
+              component="h2"
               color="inherit"
               gutterBottom
               className={classes.title}
@@ -115,7 +117,7 @@ function PaperSheet(props) {
             </Typography>
             <div className={classes.button}>
             {/* Editor Link */}
-            <IconButton component={TopicsLink} variant="contained" color="primary" className={classes.button} aria-label="Editor">
+            <IconButton component={TopicsLink} variant="contained" color="primary" className={classes.button} aria-label="Topics">
               <MessageIcon className= {classes.icon} />
             </IconButton>
 
@@ -124,16 +126,15 @@ function PaperSheet(props) {
           </div>
           </div>
 
-
-
     </div>
   );
+ }
 }
 
 
 
-PaperSheet.propTypes = {
+Topics.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PaperSheet);
+export default withStyles(styles)(Topics);
