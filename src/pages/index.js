@@ -36,6 +36,7 @@ const styles = theme => ({
     flex: 1,
     fontWeight: theme.typography.fontWeightLight,
     fontSize: 20,
+    flexDirection: 'column',
   },
 
   text: {
