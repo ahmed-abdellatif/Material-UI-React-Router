@@ -16,9 +16,10 @@ import MessageIcon from '@material-ui/icons/Message';
 import { Link } from 'react-router-dom';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import 'typeface-roboto';
 
 {/* drawer width */}
-const drawerWidth = 270;
+const drawerWidth = 250;
 
 const styles = theme => ({
   root: {
