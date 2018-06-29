@@ -124,18 +124,17 @@ class Home extends React.Component {
   {/* display card component */}
   <div className={classes.containCard}>
         <SimpleCard />
+  </div>
 
             <div className={classes.button}>
             <Button variant="fab" color="primary" aria-label="add">
              <LineWeightIcon />
             </Button>
-
             </div>
-            </div>
-          </div>
-          </div>
-          </div>
 
+          </div>
+         </div>
+       </div>
     </div>
   );
  }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import LineWeightIcon from '@material-ui/icons/LineWeight';
-import SimpleCard from '../components/SimpleCard';
+import Enhance from '../components/Enhance';
 import withRoot from '../../withRoot';
 
 import 'typeface-roboto'
@@ -121,16 +121,10 @@ class Topics extends React.Component {
             </Typography>
 
   {/* display card component */}
-  <div className={classes.containCard}>
-        <SimpleCard />
-
-            <div className={classes.button}>
-            <Button variant="fab" color="primary" aria-label="add">
-             <LineWeightIcon />
-            </Button>
-
-            </div>
-            </div>
+  <div className={classes.containEnhance}>
+        <Enhance />
+</div>
+            
           </div>
           </div>
           </div>

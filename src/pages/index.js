@@ -35,6 +35,14 @@ const styles = theme => ({
   },
   flex: {
     flex: 1,
+    display: 'inline-flex',
+    fontWeight: theme.typography.fontWeightLight,
+    fontSize: 23,
+    flexDirection: 'row',
+  },
+  navFlex:{
+    flex: 1,
+    display: 'inline-flex',
     fontWeight: theme.typography.fontWeightLight,
     fontSize: 20,
     flexDirection: 'column',
@@ -183,8 +191,8 @@ const drawer = (
               <IconButton onClick={this.handleDrawerClose}>
                 {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
               </IconButton>
-              <Typography variant="title" color="primary" className={classes.flex} noWrap>
-                A Design in Mind
+              <Typography variant="title" color="primary" className={classes.navFlex} noWrap>
+                Design in Mind
               </Typography>
             </div>
             <Divider className={classes.lineDivide}/>
@@ -227,8 +235,7 @@ const drawer = (
               [classes[`appBarShift-${anchor}`]]: open,
             })}
           >
-
-            <Toolbar disableGutters={!open}>
+            <Toolbar>
 
               <IconButton
                 color="inherit"
@@ -241,21 +248,21 @@ const drawer = (
               </IconButton>
 
               {/* AppBar Title */}
-                <Typography variant="title" color="inherit" className={classes.flex} noWrap>
+                <Typography variant="title" color="inherit" className={classes.flex}>
                   UI Design
                 </Typography>
                {/* AppBar Nav Icons Begin */}
                   <div>
                   {/* Home Link */}
-                  <IconButton component={HomeLink} variant="contained" color="secondary" className={classes.button} aria-label="Home">
+                  <IconButton component={HomeLink} variant="contained" color="secondary" className={classes.menu} aria-label="Home">
                     <HomeIcon />
                   </IconButton>
                  {/* Editor Link */}
-                 <IconButton component={AboutLink} variant="contained" color="secondary" className={classes.button} aria-label="About">
+                 <IconButton component={AboutLink} variant="contained" color="secondary" className={classes.menu} aria-label="About">
                    <KeyboardIcon />
                  </IconButton>
                 {/* Topics Link */}
-                <IconButton component={TopicsLink} variant="contained" color="secondary" className={classes.button} aria-label="Topics">
+                <IconButton component={TopicsLink} variant="contained" color="secondary" className={classes.menu} aria-label="Topics">
                   <MessageIcon />
                 </IconButton>
               </div>
