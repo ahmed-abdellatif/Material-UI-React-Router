@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Index from './pages/index';
 import Home from './pages/Home/home';
-import Editor from './pages/Editor/editor';
+import About from './pages/About/about';
 import Topics from './pages/Topics/topics';
-import {BrowserRouter as Router, Route, Switch
+
+import {BrowserRouter as Router, Route, Switch, Redirect,
   //Link
 } from 'react-router-dom'
 
@@ -13,9 +14,10 @@ ReactDOM.render(
   <Router>
     <div>
       <Index />
+      <Redirect to="/home" />
     <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route path="/editor" component={Editor}/>
+      <Route exact path="/home" component={Home}/>
+      <Route path="/about" component={About}/>
       <Route path="/topics" component={Topics}/>
    </Switch>
     </div>

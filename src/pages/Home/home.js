@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
-import { Link } from 'react-router-dom';
+import LineWeightIcon from '@material-ui/icons/LineWeight';
+import SimpleCard from '../components/SimpleCard';
+import withRoot from '../../withRoot';
+
 import 'typeface-roboto'
-
-
-
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
@@ -33,9 +30,11 @@ const styles = theme => ({
       justifyContent: 'center',
     },
     title: {
-      letterSpacing: '.7rem',
-      textIndent: '.7rem',
+      letterSpacing: '.3rem',
+      textIndent: '.3rem',
+      flexDirection: 'column',
       fontWeight: theme.typography.fontWeightLight,
+      marginBottom: theme.spacing.unit,
       [theme.breakpoints.only('xs')]: {
         fontSize: 28,
       },
@@ -44,7 +43,9 @@ const styles = theme => ({
     headline: {
       paddingLeft: theme.spacing.unit * 4,
       paddingRight: theme.spacing.unit * 4,
-      marginTop: theme.spacing.unit,
+      fontWeight: theme.typography.fontWeightLight,
+      marginTop: theme.spacing.unit ,
+      letterSpacing: '.1rem',
       maxWidth: 500,
       textAlign: 'center',
     },
@@ -56,7 +57,9 @@ const styles = theme => ({
       },
     },
     button: {
-      marginTop: theme.spacing.unit * 3,
+      margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
+        textAlign: 'center',
+
     },
     logo: {
       margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
@@ -78,13 +81,18 @@ const styles = theme => ({
   icon: {
     fontSize: 70,
   },
+  //{/* card component style class */}
+  containCard: {
+    margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
+
+  }
 });
-const HomeLink = props => <Link to="/home" {...props} />
 
 class Home extends React.Component {
 
   render() {
     const classes = this.props.classes;
+
     return (
         <div className={classes.root}>
 
@@ -93,30 +101,36 @@ class Home extends React.Component {
         <div className={classes.content}>
           <div className={classes.text}>
             <Typography
-              variant="display2"
+              variant="display3"
               align="center"
               component="h2"
-              color="inherit"
+              color="primary"
               gutterBottom
               className={classes.title}
             >
-              {'React Materialized'}
+              {'Material Design'}
             </Typography>
+
             <Typography
               variant="headline"
               component="h2"
-              color="inherit"
+              color="primary"
               gutterBottom
               className={classes.headline}
             >
-              {"Material UI Components for React JS"}
+              {" React UI Components"}
             </Typography>
-            <div className={classes.button}>
-            {/* Editor Link */}
-            <IconButton component={HomeLink} variant="contained" color="primary" className={classes.button} aria-label="Home">
-              <HomeIcon className= {classes.icon} />
-            </IconButton>
 
+  {/* display card component */}
+  <div className={classes.containCard}>
+        <SimpleCard />
+
+            <div className={classes.button}>
+            <Button variant="fab" color="primary" aria-label="add">
+             <LineWeightIcon />
+            </Button>
+
+            </div>
             </div>
           </div>
           </div>
@@ -131,4 +145,4 @@ Home.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Home);
+export default withRoot(withStyles(styles, { withTheme: true })(Home));

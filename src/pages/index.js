@@ -2,26 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
-import Hidden from '@material-ui/core/Hidden';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import classNames from 'classnames';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Icon from '@material-ui/core/Icon';
 import Drawer from '@material-ui/core/Drawer';
 import HomeIcon from '@material-ui/icons/Home';
 import Divider from '@material-ui/core/Divider';
 import KeyboardIcon from '@material-ui/icons/Keyboard';
 import MessageIcon from '@material-ui/icons/Message';
-import Share from '@material-ui/icons/Share';
 import { Link } from 'react-router-dom';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import List from '@material-ui/core/List';
+
 {/* drawer width */}
-const drawerWidth = 300;
+const drawerWidth = 270;
 
 const styles = theme => ({
   root: {
@@ -40,21 +37,30 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightLight,
     fontSize: 20,
   },
+
   text: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   button: {
      margin: theme.spacing.unit,
      textAlign: 'center',
      position: 'relative',
      //overflow: 'hidden',
     },
+
    input: {
      display: 'none',
    },
+
+   lineDivide:{
+     width: '100%',
+     maxWidth: '500px',
+  },
+
   appBar: {
     position: 'absolute',
     transition: theme.transitions.create(['margin', 'width'], {
@@ -62,6 +68,7 @@ const styles = theme => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
+
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['margin', 'width'], {
@@ -82,6 +89,7 @@ const styles = theme => ({
   hide: {
     display: 'none',
   },
+
   drawerPaper: {
     position: 'absolute',
     width: drawerWidth,
@@ -89,6 +97,7 @@ const styles = theme => ({
     overflow: 'hidden',
     padding: theme.spacing.unit * 2,
   },
+
   // Navigation Header
   drawerHeader: {
     display: 'flex',
@@ -107,9 +116,11 @@ const styles = theme => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
+
   'content-left': {
     marginLeft: -drawerWidth,
   },
+
   'content-right': {
     marginRight: -drawerWidth,
   },
@@ -127,11 +138,11 @@ const styles = theme => ({
   },
 });
 
-{/* declare global pathways */}
-const HomeLink = props => <Link to="/" {...props} />
-const EditorLink = props => <Link to="/editor" {...props} />
-const TopicsLink = props => <Link to="/topics" {...props} />
 
+{/* declare pathways */}
+const HomeLink = props => <Link to="/home" {...props} />
+const AboutLink = props => <Link to="/about" {...props} />
+const TopicsLink = props => <Link to="/topics" {...props} />
 
 class Index extends React.Component {
   state = {
@@ -170,11 +181,11 @@ const drawer = (
               <IconButton onClick={this.handleDrawerClose}>
                 {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
               </IconButton>
-              <Typography variant="title" color="inherit" className={classes.flex} noWrap>
-                Codex
+              <Typography variant="title" color="primary" className={classes.flex} noWrap>
+                A Design in Mind
               </Typography>
             </div>
-            <Divider />
+            <Divider className={classes.lineDivide}/>
             <div className={classes.button}>
 
             {/* Home Link */}
@@ -184,7 +195,7 @@ const drawer = (
 
 
            {/* Editor Link */}
-           <IconButton component={EditorLink} variant="contained" color="primary" className={classes.button} aria-label="Editor">
+           <IconButton component={AboutLink} variant="contained" color="primary" className={classes.button} aria-label="About">
              <KeyboardIcon />
            </IconButton>
 
@@ -227,34 +238,25 @@ const drawer = (
                 <MenuIcon />
               </IconButton>
 
-
-
               {/* AppBar Title */}
                 <Typography variant="title" color="inherit" className={classes.flex} noWrap>
-                  Codex
+                  UI Design
                 </Typography>
-
-            {/* AppBar Nav Icons Begin */}
-
-
+               {/* AppBar Nav Icons Begin */}
                   <div>
                   {/* Home Link */}
                   <IconButton component={HomeLink} variant="contained" color="secondary" className={classes.button} aria-label="Home">
                     <HomeIcon />
                   </IconButton>
-
-
                  {/* Editor Link */}
-                 <IconButton component={EditorLink} variant="contained" color="secondary" className={classes.button} aria-label="Editor">
+                 <IconButton component={AboutLink} variant="contained" color="secondary" className={classes.button} aria-label="About">
                    <KeyboardIcon />
                  </IconButton>
-
                 {/* Topics Link */}
                 <IconButton component={TopicsLink} variant="contained" color="secondary" className={classes.button} aria-label="Topics">
                   <MessageIcon />
                 </IconButton>
-
-                  </div>
+              </div>
 
             </Toolbar>
           </AppBar>

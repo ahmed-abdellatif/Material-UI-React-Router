@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import IconButton from '@material-ui/core/IconButton';
-import KeyboardIcon from '@material-ui/icons/Keyboard';
-import { Link } from 'react-router-dom';
+//import HomeIcon from '@material-ui/icons/Home';
+import LineWeightIcon from '@material-ui/icons/LineWeight';
+import ColoredLines from '../components/ColoredLines';
+import withRoot from '../../withRoot';
+
 import 'typeface-roboto'
-
-
-
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
@@ -33,9 +30,11 @@ const styles = theme => ({
       justifyContent: 'center',
     },
     title: {
-      letterSpacing: '.7rem',
-      textIndent: '.7rem',
+      letterSpacing: '.3rem',
+      textIndent: '.3rem',
+      flexDirection: 'column',
       fontWeight: theme.typography.fontWeightLight,
+      marginBottom: theme.spacing.unit,
       [theme.breakpoints.only('xs')]: {
         fontSize: 28,
       },
@@ -44,7 +43,9 @@ const styles = theme => ({
     headline: {
       paddingLeft: theme.spacing.unit * 4,
       paddingRight: theme.spacing.unit * 4,
-      marginTop: theme.spacing.unit,
+      fontWeight: theme.typography.fontWeightLight,
+      marginTop: theme.spacing.unit ,
+      letterSpacing: '.1rem',
       maxWidth: 500,
       textAlign: 'center',
     },
@@ -56,7 +57,9 @@ const styles = theme => ({
       },
     },
     button: {
-      marginTop: theme.spacing.unit * 3,
+      margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
+        textAlign: 'center',
+
     },
     logo: {
       margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
@@ -78,15 +81,18 @@ const styles = theme => ({
   icon: {
     fontSize: 70,
   },
+  //{/* card component style class */}
+  containCard: {
+    margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 4}px`,
+
+  }
 });
 
-
-const EditorLink = props => <Link to="/editor" {...props} />
-
-class Editor extends React.Component {
+class About extends React.Component {
 
   render() {
     const classes = this.props.classes;
+
     return (
         <div className={classes.root}>
 
@@ -95,30 +101,36 @@ class Editor extends React.Component {
         <div className={classes.content}>
           <div className={classes.text}>
             <Typography
-              variant="display2"
+              variant="display3"
               align="center"
               component="h2"
-              color="inherit"
+              color="primary"
               gutterBottom
               className={classes.title}
             >
-              {'React Materialized'}
+              {'Express'}
             </Typography>
+
             <Typography
               variant="headline"
               component="h2"
-              color="inherit"
+              color="primary"
               gutterBottom
               className={classes.headline}
             >
-              {"Material UI Components for React JS"}
+              {" your Brand & Design "}
             </Typography>
-            <div className={classes.button}>
-            {/* Editor Link */}
-            <IconButton component={EditorLink} variant="contained" color="primary" className={classes.button} aria-label="Editor">
-              <KeyboardIcon className= {classes.icon} />
-            </IconButton>
 
+  {/* display card component */}
+  <div>
+        <ColoredLines />
+
+            <div className={classes.button}>
+            <Button variant="fab" color="primary" aria-label="add">
+             <LineWeightIcon />
+            </Button>
+
+            </div>
             </div>
           </div>
           </div>
@@ -129,9 +141,8 @@ class Editor extends React.Component {
  }
 }
 
-
-Editor.propTypes = {
+About.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Editor);
+export default withRoot(withStyles(styles, { withTheme: true })(About));
