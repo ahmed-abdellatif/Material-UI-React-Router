@@ -55,13 +55,20 @@ entry-point of your app in order for it to render properly
 
 ```
 git clone https://github.com/ahmed-abdellatif/material-ui-react-router.git
-
 cd material-ui-react-router
-
 npm install
-
 npm start
 ```
+
+
+## React Transition Group
+
+### Installation
+:octocat:
+```
+npm install react-transition-group --save
+```
+
 
 #### Miscellaneous (deploying your project on github) :boom:
 :octocat: ```npm install gh-pages --save-dev```

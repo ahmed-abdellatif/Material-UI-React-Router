@@ -18,6 +18,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import 'typeface-roboto';
 
+{/* index.js renders the top app bar */}
+
+
+
 {/* drawer width */}
 const drawerWidth = 250;
 
@@ -111,7 +115,7 @@ const styles = theme => ({
   // Navigation Header
   drawerHeader: {
     display: 'flex',
-  //  textAlign: 'center',
+    textAlign: 'left',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '0 8px',
@@ -235,7 +239,7 @@ const drawer = (
               [classes[`appBarShift-${anchor}`]]: open,
             })}
           >
-            <Toolbar>
+            <Toolbar disableGutters={!open}>
 
               <IconButton
                 color="inherit"

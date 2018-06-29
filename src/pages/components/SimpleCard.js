@@ -7,9 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const styles = {
+const styles = theme => ({
   card: {
-    minWidth: 275,
+    minWidth: 250,
   },
   bullet: {
     display: 'inline-block',
@@ -23,9 +23,10 @@ const styles = {
   pos: {
     marginBottom: 12,
   },
-};
+});
 
 function SimpleCard(props) {
+  
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
 
