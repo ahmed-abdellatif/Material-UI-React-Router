@@ -78,9 +78,10 @@ yarn add react-select
 ```
 
 
-
-
-
+#### Miscellaneous
+```
+npm install gh-pages --save-dev
+```
 
 ### Purpose
 The purpose of this small project is to create a basic
