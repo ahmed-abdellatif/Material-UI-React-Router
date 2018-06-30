@@ -4,6 +4,7 @@ import Index from './pages/index';
 import Home from './pages/Home/home';
 import About from './pages/About/about';
 import Topics from './pages/Topics/topics';
+import Typography from '@material-ui/core/Typography';
 import 'typeface-roboto';
 
 import {BrowserRouter as Router, Route, Switch, Redirect,

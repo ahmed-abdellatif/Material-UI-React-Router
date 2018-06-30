@@ -5,8 +5,7 @@ import Button from '@material-ui/core/Button';
 import LineWeightIcon from '@material-ui/icons/LineWeight';
 import Enhance from '../components/Enhance';
 import withRoot from '../../withRoot';
-
-import 'typeface-roboto'
+import 'typeface-roboto';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
@@ -124,7 +123,7 @@ class Topics extends React.Component {
   <div className={classes.containEnhance}>
         <Enhance />
 </div>
-            
+
           </div>
           </div>
           </div>

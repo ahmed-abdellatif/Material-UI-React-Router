@@ -6,8 +6,7 @@ import Button from '@material-ui/core/Button';
 import LineWeightIcon from '@material-ui/icons/LineWeight';
 import ColoredLines from '../components/ColoredLines';
 import withRoot from '../../withRoot';
-
-import 'typeface-roboto'
+import 'typeface-roboto';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({

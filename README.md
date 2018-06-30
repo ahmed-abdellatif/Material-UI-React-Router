@@ -1,6 +1,6 @@
 # :octocat: Material React using React Router
 
-:globe_with_meridians: https://ahmed-abdellatif.github.io/react.js-material/ :globe_with_meridians:
+:globe_with_meridians: https://ahmed-abdellatif.github.io/material-ui-template.blue/ :globe_with_meridians:
 
 
 ## What's this Project about? :squirrel:
@@ -9,12 +9,12 @@ This is an example of a front end interface built using React Material UI Compon
 
 ## This is the Material UI Homepage. It routes to 3 pages total, using React Router.(Home page, Editor page, Topic page)
 <p align="center">
-  <img height="350" src="https://github.com/ahmed-abdellatif/material-ui-react-router/blob/master/material-ui-interface.png" /></p>
+  <img height="350" src="" /></p>
 
 
 ## This is the Drawer Component
 <p align="center">
-   <img height="300" src="https://github.com/ahmed-abdellatif/material-ui-react-router/blob/master/material-ui-nav.png" />
+   <img height="300" src="" />
  </p>
 
 
@@ -54,7 +54,7 @@ entry-point of your app in order for it to render properly
 :octocat:
 
 ```
-git clone https://github.com/ahmed-abdellatif/material-ui-react-router.git
+git clone https://ahmed-abdellatif.github.io/material-ui-template.blue
 cd material-ui-react-router
 npm install
 npm start
